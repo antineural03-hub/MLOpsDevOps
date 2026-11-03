@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 df = pd.read_csv("tourism_project/data/tourism.csv")
-df.drop(columns=["Unnamed: 0","CustomerID","Designation","DurationOfPitch","NumberOfFollowups","PitchSatisfactionScore"], inplace=True)
+df.drop(columns=["CustomerID","Designation","DurationOfPitch","NumberOfFollowups","PitchSatisfactionScore"], inplace=True)
 
 X = df.drop(columns=["ProdTaken"])
 y = df["ProdTaken"]
