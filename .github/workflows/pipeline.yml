@@ -44,6 +44,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: data-splits
+          # Specifying individual paths if they are saved in the root directory
           path: |
             Xtrain.csv
             Xtest.csv
@@ -64,6 +65,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: data-splits
+          path: .   # Explicitly forces extraction into the root workspace folder where your scripts look for them
       - name: Start MLflow Server
         run: |
           nohup mlflow ui --host 0.0.0.0 --port 5000 &  # Run MLflow UI in the background
