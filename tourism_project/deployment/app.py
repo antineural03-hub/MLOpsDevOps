@@ -10,7 +10,7 @@ THRESHOLD = 0.45
 
 @st.cache_resource
 def load_model():
-    return joblib.load(MODEL_PATH)
+    return joblib.load(model_path)
 
 model = load_model()
 
