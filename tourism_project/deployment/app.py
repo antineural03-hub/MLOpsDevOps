@@ -42,14 +42,14 @@ input_data = pd.DataFrame([{
     "CityTier": CityTier,
     "Occupation": Occupation,
     "Gender": Gender,
-    "NumberofPersonVisiting": NumberOfPersonVisiting,
+    "NumberOfPersonVisiting": NumberOfPersonVisiting,
     "ProductPitched": ProductPitched,
     "PreferredPropertyStar": PreferredPropertyStar,
     "MaritalStatus": MaritalStatus,
-    "NumberofTrips": NumberOfTrips,
+    "NumberOfTrips": NumberOfTrips,
     "Passport": 1 if Passport=='Yes' else 0,
     "OwnCar": 1 if OwnCar == 'Yes' else 0,
-    "NumberofChildrenVisiting": NumberOfChildrenVisiting,
+    "NumberOfChildrenVisiting": NumberOfChildrenVisiting,
     "MonthlyIncome": MonthlyIncome,
         
 }])
