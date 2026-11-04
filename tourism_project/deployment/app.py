@@ -6,7 +6,13 @@ import joblib
 
 
 model_path = os.path.join(os.path.dirname(__file__), "best_tourism_model_v1.joblib")
-model = joblib.load(model_path)
+THRESHOLD = 0.45
+
+@st.cache_resource
+def load_model():
+    return joblib.load(MODEL_PATH)
+
+model = load_model()
 
 st.title("Wellness Tourism Package Purchase Predication App")
 st.write("""
@@ -36,15 +42,16 @@ input_data = pd.DataFrame([{
     "City Tier": CityTier,
     "Occupation": Occupation,
     "Gender": Gender,
-    "Marital Status": MaritalStatus,
-    "Monthly Income": MonthlyIncome,
-    "Product Pitched": ProductPitched,
     "Number of Person Visiting": NumberOfPersonVisiting,
-    "Number of Children Visiting": NumberOfChildrenVisiting,
+    "Product Pitched": ProductPitched,
     "Preferred Property Star": PreferredPropertyStar,
+    "Marital Status": MaritalStatus,
     "Number of Trips": NumberOfTrips,
-    "Passport": Passport,
-    "Own Car": 1 if OwnCar == 'Yes' else 0
+    "Passport": 1 if Passport=='Yes' else 0,
+    "Own Car": 1 if OwnCar == 'Yes' else 0,
+    "Number of Children Visiting": NumberOfChildrenVisiting,
+    "Monthly Income": MonthlyIncome,
+        
 }])
 
 if st.button("Predict Purchase"):
