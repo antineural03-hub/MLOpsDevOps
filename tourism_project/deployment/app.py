@@ -38,19 +38,19 @@ OwnCar                   = st.selectbox("Owns a car?", ["No", "Yes"])
 
 input_data = pd.DataFrame([{
     "Age": Age,
-    "Type of Contact": TypeofContact,
-    "City Tier": CityTier,
+    "TypeofContact": TypeofContact,
+    "CityTier": CityTier,
     "Occupation": Occupation,
     "Gender": Gender,
-    "Number of Person Visiting": NumberOfPersonVisiting,
-    "Product Pitched": ProductPitched,
-    "Preferred Property Star": PreferredPropertyStar,
-    "Marital Status": MaritalStatus,
-    "Number of Trips": NumberOfTrips,
+    "NumberofPersonVisiting": NumberOfPersonVisiting,
+    "ProductPitched": ProductPitched,
+    "PreferredPropertyStar": PreferredPropertyStar,
+    "MaritalStatus": MaritalStatus,
+    "NumberofTrips": NumberOfTrips,
     "Passport": 1 if Passport=='Yes' else 0,
-    "Own Car": 1 if OwnCar == 'Yes' else 0,
-    "Number of Children Visiting": NumberOfChildrenVisiting,
-    "Monthly Income": MonthlyIncome,
+    "OwnCar": 1 if OwnCar == 'Yes' else 0,
+    "NumberofChildrenVisiting": NumberOfChildrenVisiting,
+    "MonthlyIncome": MonthlyIncome,
         
 }])
 
