@@ -37,9 +37,9 @@ xgb_model = xgb.XGBClassifier(scale_pos_weight=class_weight, random_state=42)
 
 
 param_grid = {
-    "xgbclassifier__n_estimators": [125, 135],
-    "xgbclassifier__max_depth": [6, 8],
-    "xgbclassifier__learning_rate": [0.20, 0.30],
+    "xgbclassifier__n_estimators": [100, 200],
+    "xgbclassifier__max_depth": [7, 8],
+    "xgbclassifier__learning_rate": [0.05,0.1],
 }
 
 
