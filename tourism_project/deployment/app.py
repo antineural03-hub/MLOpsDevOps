@@ -55,7 +55,10 @@ input_data = pd.DataFrame([{
 }])
 
 if st.button("Predict Purchase"):
-    prediction = model.predict(input_data)[0]
-    result = "Yes-Purchased" if prediction == 1 else "No-Not Purchased"
-    st.subheader("Prediction Result:")
-    st.success(f"The model predicts: **{result}**")
+    proba = model.predict_proba(input_data)[0, 1]
+    st.subheader("Prediction result")
+    if proba >= THRESHOLD:
+        st.success(f"Likely to purchase (probability {proba:.1%}). Worth contacting.")
+    else:
+        st.info(f"Unlikely to purchase (probability {proba:.1%}).")
+
